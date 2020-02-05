@@ -19,13 +19,13 @@ var todoSchema = new mongoose.Schema({
 var Todo = mongoose.model('Todo',todoSchema);
 
 var logSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    pwd: String
+    item: String,
+    price: Number,
+    img: String
 
 });
 
-var log = mongoose.model('log',logSchema);
+var cakes = mongoose.model('cakes',logSchema);
 
 // var item = Todo({ item: 'hi,good morning' }).save( (err) => {
 //     if (err) {
@@ -61,7 +61,7 @@ app.get('/login',(req,res) => {
 });
 
 app.post('/login',(req,res) =>{
-    var login = log(req.body).save((err,data) => {
+    var login = cakes(req.body).save((err,data) => {
         if(err){
             throw err;
         }
