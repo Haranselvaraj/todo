@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost', { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+mongoose.connect('mongodb+srv://haran:selvaraj@haran-v98ur.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (err) {
         throw err
     } else {
@@ -56,7 +56,7 @@ app.get('/todo',(req,res) => {
 
 });
 
-app.get('/login',(req,res) => {    
+app.get('/login',(_req,res) => {    
     res.render('login')
 });
 
