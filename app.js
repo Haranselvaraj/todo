@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-
+require('dotenv').config();
 var todocontroller = require('./controllers/todocontroller');
 
 var app = express();
@@ -16,6 +16,6 @@ app.use(morgan('dev'))
 
 todocontroller(app);
 
-app.listen(3000, ()=>{console.log('Server is running!');
+app.listen(process.env.PORT || 3000, ()=>{console.log('Server is running!');
 });
 
