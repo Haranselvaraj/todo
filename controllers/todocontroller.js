@@ -43,7 +43,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 module.exports = (app) => {
 
-app.get('/todo',(req,res) => {
+app.get('/',(req,res) => {
 
     Todo.find({},(err,data) => {
         if(err){
@@ -71,7 +71,7 @@ app.post('/login',(req,res) =>{
     });
 });
 
-app.post('/todo',urlencodedParser, (req,res) => {
+app.post('/',urlencodedParser, (req,res) => {
     console.log(req.body);
 
     var newTodo = Todo(req.body).save((err,data) => {
